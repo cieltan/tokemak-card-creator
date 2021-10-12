@@ -1,6 +1,10 @@
 import React from "react"
-import "../styles/global.sass"
+import {Card} from '../components/Card.jsx'
+import "../styles/main.scss"
+import "../styles/pages/_home.scss"
 
 export default function Home() {
-  return <div>Hello world!</div>
+  return <div className="homeContainer">
+    <Card />
+  </div>
 }
