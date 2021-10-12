@@ -1,6 +1,7 @@
 @import "../abstracts/variables";
 
 .headerContainer {
+  display: flex;
   height: 4rem;
   width: 100vw;
   border-bottom: 1px solid $border-color;
