@@ -1,7 +1,24 @@
 @import "../abstracts/variables";
 
 .cardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   background-color: $card-color;
   height: 200px;
-  width: 200px;
+  cursor: pointer;
+  padding: 10px;
+  box-shadow: $card-inactive-glow-color 0px 0px 15px 5px;
+
+  &:hover {
+    background-color: $card-hover-color;
+    box-shadow: $card-glow-color 0px 0px 15px 5px;
+    transition: 0.2s;
+  }
+}
+
+.cardTitle {
+  color: $text-color;
+  font-size: 24px;
+  text-transform: uppercase;
 }
