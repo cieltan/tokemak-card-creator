@@ -1,0 +1,11 @@
+@import "../abstracts/variables";
+
+.headerContainer {
+  height: 4rem;
+  width: 100vw;
+  border-bottom: 1px solid $border-color;
+}
+
+.mainContentContainer {
+  margin-top: 8rem;
+}
