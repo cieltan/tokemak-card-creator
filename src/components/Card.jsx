@@ -6,7 +6,6 @@ import "../styles/components/_card.scss"
 
 export const Card = (type) => {
   return <div className="cardContainer" onClick={() => {
-    console.log('hit')
     navigate('/uploader')
   }}>
     <div className="cardTitle" >Tokemak Pilot License</div>
