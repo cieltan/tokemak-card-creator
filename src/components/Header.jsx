@@ -4,7 +4,7 @@ import "../styles/components/_header.scss"
 
 
 export const Header = () => {
-  return <div className="headerContainer">
+  return <header className="headerContainer">
     <img src={TokemakLogo} alt="Tokemak Logo" className="tokemakDesktopLogo" />
-  </div>
+  </header>
 }
