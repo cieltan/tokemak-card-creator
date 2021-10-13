@@ -2,11 +2,25 @@
 
 .headerContainer {
   display: flex;
+  justify-content: space-between;
   height: 4rem;
   width: 100vw;
   border-bottom: 1px solid $border-color;
+  cursor: pointer;
 }
 
 .mainContentContainer {
   margin-top: 8rem;
+}
+
+.audioPlayer {
+  display: flex;
+  width: 150px !important;
+  background-color: transparent !important;
+  & .rhap_progress-section,
+  & .rhap_additional-controls,
+  & .rhap_rewind-button,
+  & .rhap_forward-button {
+    display: none;
+  }
 }
