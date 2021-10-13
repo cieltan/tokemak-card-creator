@@ -11,9 +11,13 @@
 .img-preview {
   min-height: 300px;
   min-width: 300px;
+  overflow: hidden;
+  background: $card-placeholder-color;
+}
+
+.cropImageContainer {
   height: 300px;
   width: 300px;
-  overflow: hidden;
 }
 
 .cropDataContainer {
@@ -42,7 +46,6 @@
 .cropperContainer {
   display: flex;
   justify-content: center;
-  height: 50%;
   max-height: 400px;
 }
 

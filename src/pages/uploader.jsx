@@ -66,11 +66,13 @@ const Uploader = () => {
       </div>
       <div className={"imageContainer"}>
         <span>Crop</span>
-        {cropData !== "#" ? <img alt="PreviewPFP" src={cropData !== "#" ? cropData : DefaultTokePFP} className={"cropDataContainer"} /> : <div className={"placeHolderBox"} />}
+        <div className={"cropImageContainer"}>
+          {cropData !== "#" ? <img alt="PreviewPFP" src={cropData !== "#" ? cropData : DefaultTokePFP} className={"cropDataContainer"} /> : <div className={"placeHolderBox"} />}
+          </div>
       </div>
     </div>
     <div>
-      <button>Finalize Pilot License</button>
+      <button className={"nextButton"}>Finalize Pilot License</button>
     </div>
   </div>
 

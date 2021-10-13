@@ -7,10 +7,10 @@ import AudioPlayer from 'react-h5-audio-player'
 
 
 export const Header = () => {
-  return <header className="headerContainer" onClick={() => {
+  return <header className="headerContainer" >
+    <img src={TokemakLogo} alt="Tokemak Logo" className={"tokemakDesktopLogo"} onClick={() => {
     navigate('/')
-  }}>
-    <img src={TokemakLogo} alt="Tokemak Logo" className="tokemakDesktopLogo" />
+  }}/>
     <AudioPlayer className={"audioPlayer"} src="https://vgmsite.com/soundtracks/starcraft/ujczarmd/01.%20Starcraft%20Main%20Title.mp3" autoPlay={true} loop={true} volume={ .5}/>
   </header>
 }
