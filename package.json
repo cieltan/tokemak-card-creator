@@ -21,6 +21,7 @@
     "react": "^17.0.1",
     "react-cropper": "^2.1.8",
     "react-dom": "^17.0.1",
+    "react-dropzone": "^11.4.2",
     "react-h5-audio-player": "^3.7.2",
     "sass": "^1.42.1"
   },

@@ -11,6 +11,6 @@ export const Header = () => {
     <img src={TokemakLogo} alt="Tokemak Logo" className={"tokemakDesktopLogo"} onClick={() => {
     navigate('/')
   }}/>
-    <AudioPlayer className={"audioPlayer"} src="https://vgmsite.com/soundtracks/starcraft/ujczarmd/01.%20Starcraft%20Main%20Title.mp3" autoPlay={true} loop={true} volume={ .5}/>
+    <AudioPlayer className={"audioPlayer"} src="https://vgmsite.com/soundtracks/starcraft/ujczarmd/01.%20Starcraft%20Main%20Title.mp3" autoPlay={true} loop={true} volume={.1}/>
   </header>
 }

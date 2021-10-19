@@ -1,8 +1,13 @@
 import React, { useState, useRef } from 'react';
 import Cropper from "react-cropper";
+import clsx from 'clsx';
+
+
+import FileUploader from '../components/FileUploader'
 import "cropperjs/dist/cropper.css";
 import "../styles/pages/_uploader.scss"
-import DefaultTokePFP from '../../static/assets/images/panda_space_marine.jpeg'
+import DefaultTokePFP from '../../static/assets/images/Ghost_SCR_Head1.png'
+
 
 const Uploader = () => {
   const [readerData, setReaderData] = useState(null)
@@ -11,21 +16,10 @@ const Uploader = () => {
   const cropperRef = useRef(null);
 
   const onCrop = () => {
-    const imageElement = cropperRef?.current;
-    const cropper = imageElement?.cropper;
+    // const imageElement = cropperRef?.current;
+    // const cropper = imageElement?.cropper;
     // console.log(cropper.getCroppedCanvas().toDataURL());
   };
-
-  const imageHandler = (e) => {
-    const reader = new FileReader()
-
-    reader.onload = () => {
-      if (reader.readyState === 2) {
-        setReaderData(reader.result)
-      }
-    }
-    reader.readAsDataURL(e.target.files[0])
-  }
 
   const getCropData = () => {
     if (typeof cropper !== "undefined") {
@@ -34,7 +28,9 @@ const Uploader = () => {
   };
 
   return <div className={"uploadPageContainer"}>
-    <div className={"cropperContainer"}>
+    <div className="leftColumn">
+      <span>Image Loading Bay</span>
+    <div className={clsx(readerData ? "cropperContainer" : "defaultCropperContainer")}>
     {readerData && <Cropper
       src={readerData}
       // Cropper.js options
@@ -50,14 +46,10 @@ const Uploader = () => {
       onInitialized={(instance) => {
         setCropper(instance);
       }}
-      zoomable={false}
-    />}
-    </div>
-    <div className={"controlPanelContainer"}>
-      <input type="file" name="image-upload" id="input" accept="image/*" onChange={(e) => {
-    imageHandler(e)
-      }} />
-      {readerData && <button className={"cropButton"} onClick={getCropData}>Crop Image</button>}
+          zoomable={false}
+          className={"cropper"}
+      />}
+
     </div>
     <div className={"bottomPreviewContainer"}>
       <div className={"imageContainer"}>
@@ -67,12 +59,19 @@ const Uploader = () => {
       <div className={"imageContainer"}>
         <span>Crop</span>
         <div className={"cropImageContainer"}>
-          {cropData !== "#" ? <img alt="PreviewPFP" src={cropData !== "#" ? cropData : DefaultTokePFP} className={"cropDataContainer"} /> : <div className={"placeHolderBox"} />}
-          </div>
+           <img alt="PreviewPFP" src={cropData !== "#" ? cropData : DefaultTokePFP} className={"cropDataContainer"} />
+        </div>
       </div>
     </div>
     <div>
-      <button className={"nextButton"}>Finalize Pilot License</button>
+      </div>
+    </div>
+    <div className={"rightColumn"}>
+      <div className={"controlPanelContainer"}>
+        <FileUploader setReaderData={setReaderData} />
+        {readerData && <button className={clsx("cropButton", "button")} onClick={getCropData}>Crop Image</button>}
+        <button className={clsx("nextButton", "button")}>Finalize Pilot License</button>
+      </div>
     </div>
   </div>
 
